@@ -1,0 +1,110 @@
+.content-hour{
+  height: 163px;
+width: 392px;
+border-radius: 8px;
+color: #383B58;
+border: 1px solid #DFE4EA;
+box-shadow: 0px 4px 4px 0px #00000040;
+padding: 17px;
+background-color: white;
+position: relative;
+margin-top: 65px;
+}
+.content-hour h1{
+   font-size: 20px;
+font-weight: 700;
+line-height: 23px;
+letter-spacing: 0em;
+  color: var(--dark-gray);
+  position: absolute;
+  top: -35px;
+  left: 0;
+}
+.content-hour h2{
+
+font-size: 14px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+
+}
+
+.content-hour > :nth-child(2) {
+  display: flex;
+  margin-bottom: 24px;
+  /* margin: 24px 0; */
+}
+.content-hour> :nth-child(2) img {
+  margin-right: 17px;
+}
+
+.select-hours label{
+font-size: 12px;
+font-weight: 500;
+line-height: 14px;
+letter-spacing: 0em;
+text-align: left;
+margin-bottom: 8px;
+
+}
+.select-hours  select {
+  background-color: white;
+  height: 40px;
+width: 360px;
+left: 0px;
+top: 0px;
+border-radius: 5px;
+box-shadow: 0px 1px 5px 0px #00000026;
+/* color:  #545776; */
+color: var(--light-blue);
+/* border: none; */
+}
+.select-hours select::-webkit-scrollbar{
+    display: none;
+}
+
+.select-hours option{
+  color: black;
+}
+
+
+@media screen and (min-width:768px) {
+  .content-hour{
+    height: 144px;
+width: 708px;
+left: 0px;
+top: 0px;
+border-radius: 8px;
+padding: 21px 0 19px 23px;
+margin-top: 85px;
+  }
+  .content-hour h1{
+font-size: 24px;
+font-weight: 700;
+line-height: 28px;
+letter-spacing: 0em;
+text-align: left;
+top: -50px;
+
+  }
+  .content-hour > :nth-child(2) {
+   align-items: center;
+  /* margin: 24px 0; */
+}
+  .select-hours{
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+
+@media screen and (min-width:1320px) {
+  .content-hour{
+    height: 144px;
+width: 847px;
+border-radius: 8px;
+
+  }
+  
+}

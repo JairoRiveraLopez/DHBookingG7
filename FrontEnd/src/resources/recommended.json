@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Hermitage Hotel",
+    "urlImage": "https://cdn.pixabay.com/photo/2015/11/06/11/45/interior-1026452_960_720.jpg",
+    "category": "HOTEL",
+    "mediaScore": "8",
+    "qualityScore": "5",
+    "detail": "A 940 m del centro",
+    "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires... "
+  },
+  {
+    "title": "Hermitage Hotel",
+    "urlImage": "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_960_720.jpg",
+    "category": "HOTEL",
+    "mediaScore": "8",
+    "qualityScore": "2",
+    "detail": "A 940 m del centro",
+    "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires..."
+  },
+  {
+    "title": "Hermitage Hotel",
+    "urlImage": "https://eston.ca/wp-content/uploads/2017/09/hotel-room-1447201_640.jpg",
+    "category": "HOTEL",
+    "mediaScore": "8",
+    "qualityScore": "3",
+    "detail": "A 940 m del centro",
+    "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires..."
+  },
+  {
+    "title": "Hermitage Hotel",
+    "urlImage": "https://cdn.pixabay.com/photo/2017/05/31/10/23/manor-house-2359884_960_720.jpg",
+    "category": "HOTEL",
+    "mediaScore": "8",
+    "qualityScore": "4",
+    "detail": "A 940 m del centro",
+    "description": "En el corazón de San Telmo, disfruta de un albergue inspirado en las pasiones de Buenos Aires..."
+  }
+]

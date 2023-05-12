@@ -1,0 +1,247 @@
+
+:root {
+    --input-width-sm: 393.74px;
+    --input-height-sm: 38px;
+    --input-width-md: 254px;
+    --input-height-md: 40px;
+    --button-width-md: 166px;
+    --button-height-md: 40px;
+} 
+
+.search-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--semi-dark-gray);
+    width: 100%;
+    padding: 22px;
+} 
+
+.search-block form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--input-width-sm);
+    position: relative;
+}
+
+.search-block h1 {
+    padding-left: 9px;
+    padding-right: 9px;
+    width: calc(100vw - 18px);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-block form input {
+    width: var(--input-width-sm);
+    height: var(--input-height-sm);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--disabled-input-text);
+    margin-bottom: 9px;
+    cursor: pointer;
+}
+
+.search-block .form-button {
+    width: 394px;
+    height: 48px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--light-blue);
+    color: var(--white);
+    border-width: 0px;
+    cursor: pointer;
+}
+
+.search-block .form-button:hover {
+    background-color: var(--hover-button);
+    /* color: var(--dark-gray); */
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--disabled-input-text);
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+}
+
+.select {
+    display: none;
+    z-index:500;
+    position: absolute;
+    top: 52px;
+    overflow: scroll;
+    width: 290px;
+}
+
+.select::-webkit-scrollbar{
+    display: none;
+}
+
+.select.active {
+    display: block;
+    visibility: visible;
+    transform: translateX(0px);
+    transition: var(--speed) ease;
+    z-index:500;
+}
+  
+.select.inactive{
+    visibility: hidden;
+    transform: translateX(303px);
+    transition: var(--speed) ease;
+    z-index:500;
+}
+
+
+.select ul {
+    z-index:500;
+    position: relative;
+    height: 100%;
+    /* overflow: scroll; */
+}
+
+.select ul li {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.option {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.option-icon {
+    font-size: 23px;
+    color: var(--semi-dark-gray);
+    margin: 10px;
+}
+
+.option-heading {
+    height: 12.6px;
+    width: 190px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: left;
+    color: black;
+    margin-bottom: 7px;
+}
+
+.option-paragraph {
+    height: 19px;
+    width: 68px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: left;
+    color: var(--semi-dark-gray);
+}
+
+
+.select .option hr {
+    border-top: 2px solid var(--light-blue);
+    width: 368px
+}
+
+
+@media screen and (min-width: 768px) {
+    
+    .search-block form {
+        flex-direction: row;
+        width: 100vw;
+    }
+
+    .search-block h1{
+        margin-bottom: 23px;
+    }
+
+    .search-block form input {
+        width: var(--input-width-md);
+        height: 40px;
+    }
+
+    .search-block .form-button {
+        width: var(--button-width-md) !important;
+        height: var(--button-height-md) !important;
+        margin-left: 10px;
+    }
+
+    .input-icon {
+        width: var(--input-width-md) ;
+        position: relative;
+    }
+
+    .icon {
+        position: relative;
+        top: 0px;
+        left: 30px;
+    }
+
+    .select {
+        width: 650px;
+    }
+
+    .select.picker {
+        left: -254px;
+    }
+
+}
+
+
+
+@media screen and (min-width: 1060px) {
+    
+    .search-block form input {
+        width: 422px;
+        height: 40px;
+      
+    }
+
+    .search-block .form-button {
+        width: 422px;
+        height: var(--button-height-md);
+    }
+
+    .input-icon {
+        width: 422px;
+        position: relative;
+    }
+
+    .icon {
+        position: relative;
+        top: 0px;
+        left: 30px;
+    }
+
+    .select {
+        width: 840px;
+    }
+
+    .select.picker {
+        left: -100px;
+    }
+   
+}

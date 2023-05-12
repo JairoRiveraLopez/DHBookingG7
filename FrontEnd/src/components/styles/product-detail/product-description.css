@@ -1,0 +1,27 @@
+.content-description {
+  padding: 12px 15px;
+}
+.content-description h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--dark-gray);
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .content-description {
+    padding: 13px 31px;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .content-description {
+    padding: 13px 47px;
+  }
+  .title-policies {
+    padding: 13px 47px;
+  }
+}

@@ -1,0 +1,116 @@
+[
+
+    {
+      "idProduct": 1,
+      "title": "Hotel Miramar",
+      "titleDescription": "Una playa de encanto en Cancún",
+      "quality": 5,
+
+      "city": {
+        "idCity": 1,
+        "country": "Mexico",
+        "city": "Cancún"
+      },
+
+      "category": {
+        "idCategory": 1,
+        "title": "Hotel",
+        "description": "Establecimiento de hostelería que ocupa un edificio total o parcialmente con uso exclusivo de sus servicios (entradas, ascensores, escaleras, etc.) y que ofrece alojamiento y servicio de comedor.",
+        "urlImage": "https://media-cdn.tripadvisor.com/media/photo-s/25/fb/9f/ef/aereal-view.jpg"
+      },
+
+      "characteristics": [
+        {
+          "idCharacteristic": 1,
+          "title": "Cocina"
+        },
+        {
+          "idCharacteristic": 2,
+          "title": "Aire acondicionado"
+        },
+        {
+          "idCharacteristic": 3,
+          "title": "Estacionamiento gratuito"
+        },
+        {
+          "idCharacteristic": 4,
+          "title": "Wifi"
+        },
+        {
+          "idCharacteristic": 5,
+          "title": "Televisor"
+        },
+        {
+          "idCharacteristic": 6,
+          "title": "Apto mascotas"
+        },
+        {
+          "idCharacteristic": 7,
+          "title": "Pileta"
+        }
+      ],
+
+      "images": [
+        {
+          "idImage": 1,
+          "title": "Cuarto",
+          "url": "https://i.pinimg.com/originals/9c/69/f3/9c69f3aca82f8a0d0ca481c3abddb76a.jpg"
+        },
+        {
+          "idImage": 2,
+          "title": "Balcon",
+          "url": "https://media-cdn.tripadvisor.com/media/photo-s/09/a9/0e/01/hotel-nyx-cancun.jpg"
+        },
+        {
+          "idImage": 3,
+          "title": "Piscina",
+          "url": "https://media-cdn.tripadvisor.com/media/photo-s/14/47/f2/ef/hyatt-zilara-cancun.jpg"
+        },
+        {
+          "idImage": 4,
+          "title": "Baño",
+          "url": "https://media-cdn.tripadvisor.com/media/photo-s/01/9e/f3/24/banos.jpg"
+        },
+
+        {
+          "idImage": 5,
+          "title": "Sala",
+          "url": "https://pix10.agoda.net/hotelImages/4346754/0/1132fe391698296d9a1d8732408f047b.jpg?ca=17&ce=1&s=1024x768"
+        }
+      ],
+      "NormsPolicy": [
+        {
+          "idPolicy": 1,
+          "Description": "No sustancias psicoactivas"
+        },
+        {
+          "idPolicy": 2,
+          "Description": "No farra"
+        }
+      ],
+      "CancellationPolicy": [
+        {
+          "idPolicy": 1,
+          "Description": "24 horas antes sin recargo"
+        }
+      ],
+      "SecurityPolicy": [
+        {
+          "idPolicy": 1,
+          "Description": "Huella para ingresar"
+        },
+        {
+          "idPolicy": 2,
+          "Description": "Cámaras internas"
+        }
+      ]
+    }
+
+
+
+
+
+
+
+
+]

@@ -1,0 +1,9 @@
+.product-location-container {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+}
+
+.pin-icon {
+  margin-top: .2rem;
+}

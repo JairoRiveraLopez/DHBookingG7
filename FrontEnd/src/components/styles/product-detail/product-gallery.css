@@ -1,0 +1,23 @@
+.product-gallery-container {
+  background-color: var(--semi-dark-gray);
+}
+
+.gallery .swiper-slide {
+  height: 65vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+ .gallery .swiper-pagination-fraction {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  display: flex;
+  justify-content: right;
+  padding-right: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+}

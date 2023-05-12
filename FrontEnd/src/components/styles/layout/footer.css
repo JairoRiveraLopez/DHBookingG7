@@ -1,0 +1,34 @@
+footer {
+    height: 58px;
+    width: 100%;
+    background-color: var(--light-blue);
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 20px;
+  }
+  
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+  }
+  
+  footer p {
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  footer ul li {
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  

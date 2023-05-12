@@ -1,0 +1,34 @@
+.product-rating-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.product-rating-container> :first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 5rem;
+}
+
+.word-rating {
+  font-weight: 700;
+  color: var(--semi-dark-gray);
+}
+
+.disable {
+  filter: grayscale();
+}
+
+.big-number {
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: .5rem;
+  padding: 0 .5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  background-color: var(--semi-dark-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

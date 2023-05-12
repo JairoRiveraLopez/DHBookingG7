@@ -1,0 +1,167 @@
+.content-booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  margin-top: -90px;
+}
+
+.booking-calendar {
+  position: relative;
+  margin-top: 75px;
+}
+.booking-calendar h1 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0em;
+  color: var(--dark-gray);
+  position: absolute;
+  top: -40px;
+  left: 0;
+}
+.booking-calendar .react-datepicker {
+  height: 328px;
+  width: 394px;
+  border-radius: 5px;
+}
+.booking-calendar .react-datepicker__month-container {
+  float: none;
+  height: 100%;
+}
+.booking-calendar .react-datepicker__current-month {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.booking-calendar
+  .react-datepicker
+  .react-datepicker__month-container
+  .react-datepicker__month
+  .react-datepicker__week
+  .react-datepicker__day {
+  white-space: nowrap;
+  margin: 8px;
+}
+.booking-calendar .react-datepicker__month-container {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+.booking-calendar .react-datepicker__day-name {
+  margin: 8px;
+}
+.booking-calendar .react-datepicker__navigation--previous {
+  top: 20px;
+}
+.booking-calendar .react-datepicker__navigation--next {
+  top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .skeleton-calendar{
+    width: 554px;
+    height: 263px;
+  }
+  .booking-calendar
+    .react-datepicker
+    .react-datepicker__month-container
+    .react-datepicker__month
+    .react-datepicker__week
+    .react-datepicker__day {
+    white-space: nowrap;
+    margin: 7px;
+  }
+  .booking-calendar {
+    margin-top: 94px;
+  }
+  .booking-calendar .react-datepicker {
+    height: 312px;
+    width: 707px;
+    left: 0px;
+    top: 0px;
+    border-radius: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .booking-calendar h1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    top: -50px;
+  }
+
+  .booking-calendar .react-datepicker > div:nth-child(4) {
+    border-right: 1px solid #a8a8a8;
+  }
+  .booking-calendar .react-datepicker__month-container {
+  
+}
+.booking-calendar .react-datepicker__navigation--next {
+   color: black;
+   background: inherit;
+}
+.booking-calendar .react-datepicker__navigation--previous {
+ color: black;
+   background: inherit;
+}
+}
+
+@media screen and (min-width: 1350px) {
+  .skeleton-calendar{
+   height: 297px;
+    width: 847px;
+}
+  .booking-calendar {
+    height: 297px;
+    width: 847px;
+    border-radius: 5px;
+    margin-top: 73px;
+  }
+  .booking-calendar .react-datepicker__month-container {
+  padding:0 20px 20px 20px;
+  width: 50%;
+}
+  .booking-calendar .react-datepicker .react-datepicker__month-container .react-datepicker__month .react-datepicker__week .react-datepicker__day{
+    white-space: nowrap;
+    margin: 0;
+}
+.booking-calendar .react-datepicker__navigation--previous {
+  
+    
+    top: 50%;
+   
+}
+.booking-calendar .react-datepicker__day-name {
+  margin: 0px;
+}
+.booking-calendar .react-datepicker__navigation--next {
+   top: 50%;
+}
+  .booking-calendar .react-datepicker {
+    display: flex;
+    height: 297px;
+    width: 100%;
+    border-radius: 5px;
+    justify-content: center;
+    padding: 15px;
+  }
+  .booking-calendar .react-datepicker__day-names .react-datepicker__week {
+    border: 1px solid black;
+  }
+  .booking-calendar .react-datepicker__month-container {
+    height: 100%;
+  }
+  .booking {
+    display: flex;
+  }
+}
+

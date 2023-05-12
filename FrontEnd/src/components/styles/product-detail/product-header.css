@@ -1,0 +1,49 @@
+.product-header-container {}
+
+.product-header-container>div {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.product-header-container> :nth-child(1) {
+  background-color: var(--semi-dark-gray);
+}
+
+.product-header-container> :nth-child(2) {
+  background-color: var(--semi-dark-gray-transp);
+  color: var(--dark-gray);
+  gap: 2rem;
+}
+
+.product-header-container> :nth-child(3) {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.product-category {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.back-container {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn {
+  display: grid;
+  align-content: center;
+  background-color: transparent;
+  border: none;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}

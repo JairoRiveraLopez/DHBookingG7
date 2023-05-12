@@ -1,0 +1,1413 @@
+{
+	"info": {
+		"_postman_id": "8fd49abb-2128-424d-b095-277eb3ba4da9",
+		"name": "ProyetoIntegradorG7C8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21244538"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "getAllCategories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Category Title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].title).to.eql('Hoteles');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Category Description\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].description).to.eql('4');\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}categories",
+							"host": [
+								"{{local_url}}categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Category Title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql('Departamentos');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Category Description\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.description).to.eql('811.105');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Category imageUrl\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.imageUrl).to.eql('https://0521ptc8n2-g07-images-v2.s3.us-east-2.amazonaws.com/hotel-room-1447201_640.jpg');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}categories/{{id_category}}",
+							"host": [
+								"{{local_url}}categories"
+							],
+							"path": [
+								"{{id_category}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "getAllProducts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].title).to.eql('Hermitage Hotel');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Description\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].description).to.eql('Está situado a solo unas calles de la avenida Alvear, de la avenida Quintana, del parque San Martín y del distrito de Recoleta. En las inmediaciones también hay varios lugares de interés, como la calle Florida, el centro comercial Galerías Pacífico, la zo');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Category Id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].category.idCategory).to.eql(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}products",
+							"host": [
+								"{{local_url}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByCategory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].title).to.eql('Avellaneda Aparts & Suites');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Category Title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].category.title).to.eql('Departamentos');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Category Size\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.above(2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}products/idCategory?idCategory={{id_category}}",
+							"host": [
+								"{{local_url}}products"
+							],
+							"path": [
+								"idCategory"
+							],
+							"query": [
+								{
+									"key": "idCategory",
+									"value": "{{id_category}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByCity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].title).to.eql('Casa Lorenzo');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product City State\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].city.state).to.eql('Cundinamarca');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product City Size\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(6);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}products/idCity?idCity={{id_city}}",
+							"host": [
+								"{{local_url}}products"
+							],
+							"path": [
+								"idCity"
+							],
+							"query": [
+								{
+									"key": "idCity",
+									"value": "{{id_city}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql('Hermitage Hotel');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Description\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.description).to.eql('Está situado a solo unas calles de la avenida Alvear, de la avenida Quintana, del parque San Martín y del distrito de Recoleta. En las inmediaciones también hay varios lugares de interés, como la calle Florida, el centro comercial Galerías Pacífico, la zo');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Images Size\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.images.length).to.above(3);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAAAKtWyiwuVrJS8k3MzFPSUcpMLFGyMjQzNzA2tzAzMtBRSq0ogAiYmJkagAVyEzNzgBqyEjOL8osyy1ItzRzSQWJ6yfm5SrUAp1zL8FAAAAA.dCBcjll9rwpbb-tp1Au1iqT32U8SbJi7PBna3w9q6t0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}products/{{id_product}}",
+							"host": [
+								"{{local_url}}products"
+							],
+							"path": [
+								"{{id_product}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRandomProducts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Id NotNull\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].id>0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Category Id NotNull\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].category.idCategory>0);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Length\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(4);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}products/random",
+							"host": [
+								"{{local_url}}products"
+							],
+							"path": [
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRecommended",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Id \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].idProduct).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product Category Id NotNull\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].category.idCategory).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product length\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(4);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}products/recommended",
+							"host": [
+								"{{local_url}}products"
+							],
+							"path": [
+								"recommended"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"id_product_resp\", jsonData.idProduct);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql('TestHotel');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product quality\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.quality).to.eql(8);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Product images\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.images.length).to.eql(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "UserEmail",
+								"value": "jairorive96@gmail.com",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"TestHotel\",\r\n  \"titleDescription\": \"Este es un hotel de test\",\r\n  \"description\": \"Este es un hotel para testear la creacion de productos\",\r\n  \"quality\": 8,\r\n  \"distance\": \"30\",\r\n  \"category\": {\r\n    \"idCategory\": 1\r\n  },\r\n  \"city\": {\r\n    \"idCity\": 1\r\n  },\r\n    \"cancellationPolity\": [\r\n        {\r\n            \"idCancellationPolity\": 1\r\n        }\r\n    ],\r\n    \"normPolicy\": [\r\n        {\r\n            \"idNormPolity\": 1\r\n        },\r\n        {\r\n            \"idNormPolity\": 5\r\n        },\r\n        {\r\n            \"idNormPolity\": 4\r\n        }\r\n    ],\r\n    \"securityPolicy\": [\r\n        {\r\n            \"idSecurityPolity\": 1\r\n        },\r\n        {\r\n            \"idSecurityPolity\": 3\r\n        },\r\n        {\r\n            \"idSecurityPolity\": 4\r\n        }\r\n    ],\r\n\"images\": [\r\n        {\r\n            \"title\": \"Bathroom\",\r\n            \"url\": \"https://media-cdn.tripadvisor.com/media/photo-s/16/1a/ea/54/hotel-presidente-4s.jpg\"\r\n        },\r\n        {\r\n            \"title\": \"Bathroom\",\r\n            \"url\": \"https://www.bhg.com/thmb/SMaE_k1VWTL1nMBbzQu4BsijTAg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/white-green-bathroom-f3048fe3-8de9a696e00848eb8f3ebe15502a5beb.jpg\"\r\n        },\r\n        {\r\n            \"title\": \"Bathroom\",\r\n            \"url\": \"https://media.istockphoto.com/id/627892060/photo/hotel-room-suite-with-view.jpg?s=612x612&w=0&k=20&c=YBwxnGH3MkOLLpBKCvWAD8F__T-ypznRUJ_N13Zb1cU=\"\r\n        },\r\n        {\r\n            \"title\": \"Bathroom\",\r\n            \"url\": \"https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg\"\r\n        },\r\n        {\r\n            \"title\": \"Bathroom\",\r\n            \"url\": \"https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&w=1000&q=80\"\r\n        }\r\n    ],\r\n    \"feature\": [\r\n        {\r\n            \"idFeature\": 1\r\n        },\r\n        {\r\n            \"idFeature\": 4\r\n        },\r\n        {\r\n            \"idFeature\": 7\r\n        }\r\n    ],\r\n    \"location\": {\r\n        \"latitude\": -37.3335101,\r\n        \"longitude\": -59.135801,\r\n        \"address\": \"Av. Avellaneda 301\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}products",
+							"host": [
+								"{{local_url}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"let concatString = `El producto con ID = ${pm.collectionVariables.get(\"id_product_resp\")} ha sido eliminado.`\r",
+									"\r",
+									"pm.test(\"Message succesful\", function () {\r",
+									"var jsonData = pm.response.text();\r",
+									"    pm.expect(jsonData).to.eq(concatString);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}products/{{id_product_resp}}",
+							"host": [
+								"{{local_url}}products"
+							],
+							"path": [
+								"{{id_product_resp}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "getAllCities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cities Name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].name).to.eql('Bogotá');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cities Country\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].country).to.eql('Colombia');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cities Size\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}cities",
+							"host": [
+								"{{local_url}}cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCityById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cities Name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql('Bogotá');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cities Country\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.country).to.eql('Colombia');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}cities/{{id_city}}",
+							"host": [
+								"{{local_url}}cities"
+							],
+							"path": [
+								"{{id_city}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "listAvailableProductsByBooking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"idProduct\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAAAKtWyiwuVrJS8k3MzFPSUcpMLFGyMjQzszQ2NrSwsNRRSq0ogAiYGFoYgQVyEzNzgBqSMzJzSx3SQTy95PxcpVoA5Dg4gUoAAAA.N09xjmWhAM-DRkYZtst5ORdxKKckoYwoD9jUUtZfyLA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startDate\" : \"11/24/2022\",\n    \"endDate\" : \"11/26/2022\",\n    \"cityId\" : 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}bookings/listAvailableProducts",
+							"host": [
+								"{{local_url}}bookings"
+							],
+							"path": [
+								"listAvailableProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBookings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking Start hour\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].startHour).to.eql(10);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking end date\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].endDate).to.eql('2022-11-16');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking Size\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.above(5);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}bookings",
+							"host": [
+								"{{local_url}}bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookingsByUserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking Start hour\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].startHour).to.eql(7);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking end date\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].endDate).to.eql('2023-02-08');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking Size\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.above(2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}bookings/my-bookings/{{BookingIDUser}}",
+							"host": [
+								"{{local_url}}bookings"
+							],
+							"path": [
+								"my-bookings",
+								"{{BookingIDUser}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookingById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking Start hour\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.startHour).to.eql(10);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking end date\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.endDate).to.eql('2022-11-16');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}bookings/{{id_booking}}",
+							"host": [
+								"{{local_url}}bookings"
+							],
+							"path": [
+								"{{id_booking}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBookingByProductID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking Start hour\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.above(10);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}bookings/idProduct?idProduct={{id_product_booking}}",
+							"host": [
+								"{{local_url}}bookings"
+							],
+							"path": [
+								"idProduct"
+							],
+							"query": [
+								{
+									"key": "idProduct",
+									"value": "{{id_product_booking}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBooking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"id_booking_resp\", jsonData.idBooking);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking Start hour\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.startHour).to.eql(12);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Booking end date\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.endDate).to.eql('2099-11-16');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startHour\": 12,\r\n    \"startDate\": \"11/1/2099\",\r\n    \"endDate\": \"11/16/2099\",\r\n    \"idProduct\": 2,\r\n    \"idUser\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}bookings",
+							"host": [
+								"{{local_url}}bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBooking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"let concatString = `La reserva con ID = ${pm.collectionVariables.get(\"id_booking_resp\")} ha sido eliminada.`\r",
+									"\r",
+									"pm.test(\"Message succesful\", function () {\r",
+									"var jsonData = pm.response.text();\r",
+									"    pm.expect(jsonData).to.eq(concatString);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}bookings/{{id_booking_resp}}",
+							"host": [
+								"{{local_url}}bookings"
+							],
+							"path": [
+								"{{id_booking_resp}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Policies",
+			"item": [
+				{
+					"name": "getAllCancellationPolicies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cancellation ID\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].idCancellationPolity).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cancellation Description\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].description).to.eql('Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía.');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Cancellation Length\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.above(0);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}cancellationPolicies",
+							"host": [
+								"{{local_url}}cancellationPolicies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllNormPolicies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Norm ID\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].idNormPolity).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Norm Description\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].description).to.eql('Check-out: 10:00');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Norm Length\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.above(0);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}normPolicies",
+							"host": [
+								"{{local_url}}normPolicies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSecurityPolicies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Security ID\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].idSecurityPolity).to.eql(1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Security Description\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].description).to.eql('Se aplican las pautas de distanciamiento social y otras normas relacionadas con el coronavirus');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Security Length\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.above(0);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token_temp}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_url}}securityPolicies",
+							"host": [
+								"{{local_url}}securityPolicies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "userRegister",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var numberVariable = pm.collectionVariables.get(\"number_register\");\r",
+									"pm.collectionVariables.set(\"number_register\", numberVariable+1);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"UserEmailRegister\", jsonData.email);\r",
+									"pm.collectionVariables.set(\"Token\", jsonData.token);\r",
+									"\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User Name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql('Tester');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User Lastname\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.lastName).to.eql('PostmanRequest');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User Token\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.token).not.eq(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "67d99442-dd34-4944-82e8-4a76012101b6",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tester\",\n    \"lastName\": \"PostmanRequest\",\n    \"email\": \"tester{{number_register}}@gmail.com\",\n    \"password\": \"123456789\",\n    \"city\": \"Medellin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}auth/register",
+							"host": [
+								"{{local_url}}auth"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User Name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql('Tester');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User Lastname\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.lastName).to.eql('PostmanRequest');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"User Token\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.token).not.eq(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"email\":\"tester{{number_register}}@gmail.com\",\n    \"password\":\"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_url}}auth/login",
+							"host": [
+								"{{local_url}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Message succesful\", function () {\r",
+									"var jsonData = pm.response.text();\r",
+									"    pm.expect(jsonData).to.eq(\"Se ha eliminado el usuario de forma satisfactoria\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "Bearer {{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "UserEmail",
+								"value": "{{UserEmailRegister}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}auth",
+							"host": [
+								"{{local_url}}auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local_url",
+			"value": "http://52.14.228.70/DHBooking/",
+			"type": "string"
+		},
+		{
+			"key": "id_category",
+			"value": "3",
+			"type": "string"
+		},
+		{
+			"key": "id_product",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "id_city",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "id_booking",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "id_product_resp",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "number_register",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "UserEmailRegister",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "BookingIDUser",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "Token_temp",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "id_product_booking",
+			"value": "2",
+			"type": "string"
+		},
+		{
+			"key": "id_booking_resp",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

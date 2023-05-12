@@ -1,0 +1,144 @@
+.register {
+    margin-bottom: 93px;
+    position: static;
+    margin-top: 120px;
+    height: 93%;
+    width: 100vw;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-register {
+    width: 448px;
+    margin: 0 auto;
+    display: block;
+}
+
+.row {
+    width: 100%;
+
+}
+
+.col-2 {
+    width: 178px;
+}
+
+.error {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+    color: #FF0000;
+}
+
+.div-error{
+    margin: 0 auto;
+    text-align: end;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input[type=submit] {
+    margin-top: 25px;
+    width: 206px;
+    background-color: #1DBEB4;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+a {
+    color: #4285F4;
+    text-decoration: dashed;
+}
+
+@media screen and (max-width: 767px) {
+    .form {
+        width: 260px;
+        margin: 0 auto;
+    }
+
+    .col,
+    .col-2 {
+        width: 260px;
+        margin: 0 auto
+    }
+
+    .div-error{
+        margin: 0 auto;
+        width: 260px;
+        text-align: end;
+    }
+
+    input[type=submit] {
+        margin-top: 25px;
+        width: 300px;
+        background-color: #1DBEB4;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .form {
+        width: 304px;
+        margin: 0 auto;
+    }
+
+    .col,
+    .col-2 {
+        width: 304px;
+        margin: 0 auto
+    }
+
+    .div-error{
+        margin: 0 auto;
+        width: 304px;
+        text-align: end;
+    }
+
+    input[type=submit] {
+        margin-top: 25px;
+        width: 346px;
+        background-color: #1DBEB4;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+    }
+}
